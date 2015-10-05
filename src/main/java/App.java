@@ -18,12 +18,11 @@ public class App {
     get("/output", (request, response) -> {
       HashMap<String,Object> model = new HashMap<String, Object>();
       model.put("template", "templates/outputWP.vtl");
-
       String userInput = request.queryParams("userInput");
       String userOutput = WordPuzzle.puzzleMaker(userInput);
-
       model.put("userOutput", userOutput);
+
       return new ModelAndView(model, layout);
-    },	new VelocityTemplateEngine());
+      },	new VelocityTemplateEngine());
   }
 }
