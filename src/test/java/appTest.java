@@ -8,14 +8,24 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class AppTest extends FluentTest {
   public WebDriver webDriver = new HtmlUnitDriver();
-
+  public WebDriver getDefaultDriver() {
+      return webDriver;
+  }
 
   @ClassRule
   public static ServerRule server = new ServerRule();
 
   @Test
   public void rootTest() {
-  	goTo("http://localhost:4567/");
-  	assertThat(pageSource()).contains("Word Puzzle");
+      goTo("http://localhost:4567/");
+      assertThat(pageSource()).contains("Word Puzzle");
+  }
+
+  @Test
+  public void result_displayCorrectOutput() {
+    goTo("http://localhost:4567/");
+    fill("#userInput").with("tree");
+    submit(".btn");
+    assertThat(pageSource()).contains("tr--");
   }
 }

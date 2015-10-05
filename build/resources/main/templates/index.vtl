@@ -1,11 +1,23 @@
-<h1>Word Puzzle</h1>
-<form  action='/displayResult'>
-  <div class='form-group'>
-    <label for='userInput'> Let's play a game! Insert a word that you would like your friend to guess, then see if they can figure it out! </label>
-    <input type="text" name="userInput" id="userInput" class="form-control">
-  </div>
+<!DOCTYPE html>
 
-<button type="submit" class='btn'> Go!</button>
+<html>
+  <head>
+    <h1>Word Puzzle</h1>
+    <br>
+    <img src="/img/puzzle-tree.jpg" alt="Puzzle Piece Tree" width="250" height="250" align="right">
+    <br>
+    <p>  Let's play a game! Insert a word that you would like your friend to guess,
+          then see if they can figure it out! </p>
+  </head>
 
-<img src="puzzle-tree.jpg" alt="Puzzle Piece Tree">
-</form>
+  <body>
+    <form  action='/output' method='get'>
+      <div class="form-group">
+        <div class="col-xs-4">
+          <input type="text" name="userInput" id="userInput" class="form-control">
+        </div>
+      </div>
+        <button type="submit" class='btn'> Go!</button>
+    </form>
+  </body>
+</html>
