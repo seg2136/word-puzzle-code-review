@@ -3,7 +3,7 @@ apply plugin: 'application'
 
 archivesBaseName = "word-puzzle-code-review"
 version = '1.0'
-mainClassName = "WordPuzzle"
+mainClassName = "App"
 
 repositories {
  mavenCentral()

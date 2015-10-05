@@ -6,11 +6,9 @@ import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class WordPuzzle extends FluentTest {
+public class AppTest extends FluentTest {
   public WebDriver webDriver = new HtmlUnitDriver();
-  public WebDriver getDefaultDriver() {
-      return webDriver;
-  }
+
 
   @ClassRule
   public static ServerRule server = new ServerRule();
@@ -18,5 +16,6 @@ public class WordPuzzle extends FluentTest {
   @Test
   public void rootTest() {
   	goTo("http://localhost:4567/");
-  	assertThat(pageSource()).contains(" ");
+  	assertThat(pageSource()).contains("Word Puzzle");
   }
+}
